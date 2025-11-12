@@ -260,3 +260,154 @@ plt.xlabel("Actual CO₂ g/km")
 plt.ylabel("Predicted CO₂ g/km")
 plt.title("Random Forest: Actual vs Predicted CO₂ Emissions")
 plt.show()
+
+#ML Based Projection of Vehicle Emissions
+
+NUM_YEARS = 5
+annual_fleet_growth = 0.02  # 2% increase in number of vehicles/year
+annual_efficiency_improve = 0.01  # 1% decrease in CO2 per km/year
+
+# Baseline average per-vehicle CO2 (kg/year)
+baseline_co2_per_vehicle = vehicle_df["co2_emissions_kg_per_year"].mean()
+
+# Baseline fleet size (number of vehicles)
+fleet_size = 17470500  # example: 2015 North America sales
+
+# Initialize list to store yearly predictions
+predicted_total_co2 = []
+
+for year in range(NUM_YEARS):
+    # Apply fleet growth
+    fleet_size_year = fleet_size * ((1 + annual_fleet_growth) ** year)
+
+    # Apply efficiency improvements
+    co2_per_vehicle_year = baseline_co2_per_vehicle * ((1 - annual_efficiency_improve) ** year)
+
+    # Total emissions
+    total_co2_year = fleet_size_year * co2_per_vehicle_year
+    predicted_total_co2.append(total_co2_year / 1e6)  # convert to million tonnes
+
+    years = np.arange(1, NUM_YEARS + 1)  # Year 1, Year 2, ...
+plt.figure(figsize=(8, 6))
+plt.plot(years, predicted_total_co2, marker='o', linestyle='-', color='steelblue')
+plt.xticks(years)
+plt.ylabel("Predicted Total CO₂ Emissions (Million Tonnes)")
+plt.xlabel("Year")
+plt.title("Projected CO₂ Emissions from Vehicles (Next 5 Years)")
+plt.grid(True)
+plt.show()
+
+# Assuming 'rf' is your trained RandomForestRegressor
+# X_baseline contains features for all vehicles (or average vehicle)
+# Here we just use the average vehicle features for simplicity
+
+# Compute predictions for each tree
+all_tree_preds = np.array([tree.predict(X_test) for tree in rf.estimators_])
+
+# Compute mean and standard deviation per sample
+mean_preds = np.mean(all_tree_preds, axis=0)
+std_preds = np.std(all_tree_preds, axis=0)
+
+# Use mean of the mean_preds as baseline per-vehicle CO2
+baseline_co2_per_vehicle = np.mean(mean_preds)  # kg/year
+
+NUM_YEARS = 5
+annual_fleet_growth = 0.02  # 2% increase per year
+annual_efficiency_improve = 0.01  # 1% per year improvement
+fleet_size = 17470500  # 2015 NA sales
+
+predicted_total_co2 = []
+upper_bound = []
+lower_bound = []
+
+for year in range(NUM_YEARS):
+    fleet_year = fleet_size * ((1 + annual_fleet_growth) ** year)
+    co2_per_vehicle_year = baseline_co2_per_vehicle * ((1 - annual_efficiency_improve) ** year)
+
+    total_co2_year = fleet_year * co2_per_vehicle_year
+    predicted_total_co2.append(total_co2_year / 1e6)  # convert to million tonnes
+
+    # Uncertainty bounds
+    upper_bound.append((total_co2_year + std_preds.mean() * fleet_year) / 1e6)
+    lower_bound.append((total_co2_year - std_preds.mean() * fleet_year) / 1e6)
+
+    years = np.arange(1, NUM_YEARS + 1)
+
+plt.figure(figsize=(8, 6))
+plt.plot(years, predicted_total_co2, marker='o', color='steelblue', label="Predicted Total CO₂")
+plt.fill_between(
+    years, lower_bound, upper_bound, color='steelblue', alpha=0.2, label="RF Uncertainty"
+)
+plt.xticks(years)
+plt.ylabel("Total CO₂ Emissions (Million Tonnes)")
+plt.xlabel("Year")
+plt.title("Projected Vehicle CO₂ Emissions with Random Forest Uncertainty")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# --- Assumptions ---
+NUM_YEARS = 5
+annual_vehicle_growth = 0.02  # 2% annual vehicle fleet growth
+annual_efficiency_improve = 0.01  # 1% per year efficiency improvement
+vehicle_fleet_2015 = 17470500  # 2015 North America vehicle sales
+
+# Filter livestock for North America, Cattle, Meat
+cattle_meat_na_df = livestock_df[
+    (livestock_df["region"] == "North America")
+    & (livestock_df["animal_type"] == "Cattle")
+    & (livestock_df["commodity"] == "Meat")
+].copy()
+
+# Compute total CO2 (kg/year) and convert to million tonnes
+livestock_total_co2 = cattle_meat_na_df["co2_emissions_kg"].sum() / 1e6  # million tonnes
+livestock_total_list = [livestock_total_co2] * NUM_YEARS  # repeat for 5 years
+
+# --- Compute Random Forest uncertainty for per-vehicle CO2 ---
+# X_test is your vehicle features used previously
+all_tree_preds = np.array([tree.predict(X_test) for tree in rf.estimators_])
+mean_preds = np.mean(all_tree_preds, axis=0)
+std_preds = np.std(all_tree_preds, axis=0)
+baseline_co2_per_vehicle = np.mean(mean_preds)  # kg/year
+
+# --- Initialize vehicle lists ---
+vehicle_total_co2 = []
+vehicle_upper = []
+vehicle_lower = []
+years = np.arange(1, NUM_YEARS + 1)
+
+for year in range(NUM_YEARS):
+    # Vehicle projections
+    fleet_year = vehicle_fleet_2015 * ((1 + annual_vehicle_growth) ** year)
+    co2_per_vehicle_year = baseline_co2_per_vehicle * ((1 - annual_efficiency_improve) ** year)
+    total_co2_year = fleet_year * co2_per_vehicle_year
+    vehicle_total_co2.append(total_co2_year / 1e6)  # million tonnes
+
+    # Uncertainty bounds
+    vehicle_upper.append((total_co2_year + std_preds.mean() * fleet_year) / 1e6)
+    vehicle_lower.append((total_co2_year - std_preds.mean() * fleet_year) / 1e6)
+
+# --- Plot combined projections ---
+plt.figure(figsize=(10, 6))
+
+# Vehicle trendline with uncertainty
+plt.plot(years, vehicle_total_co2, color='steelblue', marker='o', label="Vehicles")
+plt.fill_between(
+    years,
+    vehicle_lower,
+    vehicle_upper,
+    color='steelblue',
+    alpha=0.2,
+    label="RF Uncertainty (Vehicles)",
+)
+
+# Livestock trendline
+plt.plot(years, livestock_total_list, color='darkgreen', marker='s', label="Cattle Meat (NA)")
+
+plt.xticks(years)
+plt.ylabel("Total CO₂ Emissions (Million Tonnes/year)")
+plt.xlabel("Year")
+plt.title("Projected Vehicle and Cattle Meat CO₂ Emissions (Next 5 Years)")
+plt.legend()
+plt.grid(True)
+plt.show()
