@@ -28,6 +28,7 @@ dependencies = [ # fmt: off
   "seaborn",     # Statistical charts built on matplotlib
   "ipython",     # Enhanced Python shell (needed for notebooks)
   "ipykernel",   # Jupyter kernel for notebooks
+  "shap",        #For Machine Learning
 ]  # fmt: on
 
 [project.urls]
