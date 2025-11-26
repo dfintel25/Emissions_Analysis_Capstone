@@ -26,9 +26,20 @@ The project is supported by the execution of 5 Jupyter Notebooks that individual
 5) [vehicle_emissions_ML.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/vehicle_emissions_ML.ipynb) | An individual Machine Learning Analysis of select Vehicle data features.
 
 # Project Results
-Finding #1 - Individual Vehicle Dataset analysis
-Number of Cylinders per engine contributed to higher CO2 readings.
+**Finding #1** - Individual Vehicle Dataset analysis; *Number of Cylinders* per engine contributed to higher CO2 readings.
 ![CO2 Emissions by Cylinder Count](image3.png)
+
+**Finding #2** - Individual Livestock Dataset analysis; *Cattle* had the highest correlation to CO2 emissions.
+![Total CO2 Emissions by Animal Type](image4.png)
+
+**Finding #3** - Comparative Results; *Cattle Meat* production was 2.86x more CO2 polluting than cars.
+![Proportion of Total CO2 Emissions (North America)](image12.png)
+
+**Finding #4** - Individual Vehicle Dataset Machine Learning; Analysis confirmed *Engine Size* was the most significant contributing feature.
+![Top 15 Features Driving Fuel Consumption (L/100 km)](image25.png)
+
+**Finding #5** - Individual Livestock Dataset Machine Learning; *Enteric Fermentation* (methane from cow digestion) was the highest contributing feature.
+![Top 15 Feature Importances (Random Forest)](image26.png)
 
 # Report Conclusion
 *Our project confirmed our thesis in identifying and measuring the comparative emissions of livestock production and vehicle usage. Our results show that Cattle Meat production for one year is\textbf{ 2.86x more CO2 polluting} than if all vehicles sold in North America drove 10,000 miles within that same year.
