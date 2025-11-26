@@ -5,19 +5,19 @@
 ## Repository Overview
 This repository captures the technical analysis utilized in a capstone project called "Emissions Analysis, Livestock vs Vehicles". The capstone project is part of a Masters of Science Data Analytics program through Northest Missouri State University. This project employs various data science and analytics methods against a problem domain.
 
-#### Final Capstone Report Link: https://www.overleaf.com/read/rrpbnffjgngk#d6ef5d
+### Final Capstone Report Link: https://www.overleaf.com/read/rrpbnffjgngk#d6ef5d
 
 ### Capstone Abstract
 *This study applied data science and machine learning techniques to compare and analyze greenhouse gas emissions from livestock production and vehicle usage. By conforming disparate datasets and performing regression and clustering analyses, the research quantified the relative emissions impact of cattle meat production and vehicle travel. The findings demonstrate that livestock-related emissions substantially exceed those from vehicle use under comparable annual activity assumptions providing insights into how diet and transportation choices may influence climate impact.*
 
-### Source Data:
+# Source Data:
 This project utilized two separate datasets, sourced from [Kaggle](https://www.kaggle.com/). Both native CSV files have been brought into this project.
 
 Livestock Dataset: https://www.kaggle.com/datasets/amandaroseknudsen/gleamlivestockemissions
 
 Vehicle Dataset: https://www.kaggle.com/datasets/brsahan/vehicle-co2-emissions-dataset
 
-### Notebooks:
+# Notebooks:
 The project is supported by the execution of 5 Jupyter Notebooks that individually contributed to the final results. See below for their listing and description.
 1) [emissions_analysis_livestock.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/emissions_analysis_livestock.ipynb) | An individual Exploratory Data Analysis of the Livestock source CSV data.
 2) [emissions_analysis_vehicle.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/emissions_analysis_vehicle.ipynb) | An individual Exploratory Data Analysis of the Vehicle source CSV data.
@@ -25,7 +25,7 @@ The project is supported by the execution of 5 Jupyter Notebooks that individual
 4) [livestock_emissions_ML.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/livestock_emissions_ML.ipynb) | An individual Machine Learning Analysis of select Livestock data features.
 5) [vehicle_emissions_ML.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/vehicle_emissions_ML.ipynb) | An individual Machine Learning Analysis of select Vehicle data features.
 
-### Machine Learning Results
+# Machine Learning Results
 **Vehicle Dataset:**
 - R^2 Score: 0.9964
 - RMSE: 3.51 g/km
