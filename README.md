@@ -25,6 +25,8 @@ The project is supported by the execution of 5 Jupyter Notebooks that individual
 4) [livestock_emissions_ML.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/livestock_emissions_ML.ipynb) | An individual Machine Learning Analysis of select Livestock data features.
 5) [vehicle_emissions_ML.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/vehicle_emissions_ML.ipynb) | An individual Machine Learning Analysis of select Vehicle data features.
 
+
+
 # Preliminary Setup Steps
 
 ### 1. Initialize
@@ -61,8 +63,36 @@ git push -u origin main
 3. Open your new cloned repository in VS Code.
 ```
 ### 5. Detailed Project Setup
+```
 For additional setup details, see [SET_UP_Workflow.md](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/SET_UP_Workflow.md)
-
 ```
 
+### References
+```
+Knudsen, Amanda Rose. **GLEAM Livestock Emissions Dataset (Kaggle)**.
+https://www.kaggle.com/datasets/amandaroseknudsen/gleamlivestockemissions
+Accessed October 24, 2025.
 
+Food and Agriculture Organization of the United Nations (FAO). **Global Livestock Environmental Assessment Model (GLEAM) — FAQs**.
+https://www.fao.org/gleam/faqs/en/
+Accessed October 24, 2025.
+
+International Energy Agency. **EV Life Cycle Assessment Calculator** (2025).
+https://www.iea.org/data-and-statistics/data-tools/ev-life-cycle-assessment-calculator
+Accessed October 24, 2025.
+
+Mai, L., Liu, M., Hao, H., Sun, X., Meng, F., Geng, Y., Zhao, F. (2025).
+**A high-resolution dataset on electric passenger vehicle characteristics in China and the European Union.** *Scientific Data*, 12(1449).
+https://www.nature.com/articles/s41597-025-05770-7
+
+Livestock Data for Decisions. **Livestock and Greenhouse Gas Emissions** (2025).
+https://livestockdata.org/resources/livestock-and-greenhouse-gas-emissions
+Accessed October 24, 2025.
+
+Batuhan, S. **Vehicle CO₂ Emissions Dataset** (2024).
+https://www.kaggle.com/datasets/brsahan/vehicle-co2-emissions-dataset/data
+Accessed October 24, 2025.
+
+MarkLines Information Platform. **Flash Report, Sales Volume, 2015** (2016).
+https://www.marklines.com/en/statistics/flash_sales/salesfig_usa_2015
+Accessed October 24, 2025.
