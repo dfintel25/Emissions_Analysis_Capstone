@@ -42,9 +42,8 @@ The project is supported by the execution of 5 Jupyter Notebooks that individual
 ![Top 15 Feature Importances (Random Forest)](image26.png)
 
 # Report Conclusion
-*Our project confirmed our thesis in identifying and measuring the comparative emissions of livestock production and vehicle usage. Our results show that Cattle Meat production for one year is\textbf{ 2.86x more CO2 polluting} than if all vehicles sold in North America drove 10,000 miles within that same year.
-
-Additionally, \textit{Enteric Fermentation} from Cattle (digestive methane byproduct) is the strongest contributor from livestock production and \textit{Engine Size} (along with cylinder-count) is the strongest contributor to vehicle use emissions. This provides insights into individual and collective choices where adjusting ones usage and consumption of the related topics could have a significant impact on our climate.*
+*Our project confirmed our thesis in identifying and measuring the comparative emissions of livestock production and vehicle usage. Our results show that Cattle Meat production for one year is **2.86x more CO2 polluting** than if all vehicles sold in North America drove 10,000 miles within that same year.
+Additionally, *Enteric Fermentation* from Cattle (digestive methane byproduct) is the strongest contributor from livestock production and *Engine Size* (along with cylinder-count) is the strongest contributor to vehicle use emissions. This provides insights into individual and collective choices where adjusting ones usage and consumption of the related topics could have a significant impact on our climate*.
 
 # Preliminary Setup Steps
 
