@@ -1,16 +1,11 @@
 # mkdocs.yml
 # Configuration file for MkDocs (Automated project documentation generator)
 
-# TODO: Change denisecase to your GitHub username (use CTRL F to find all instances)
-# TODO: Change pro-analytics-02-starter to your repository name (use CTRL F to find all instances)
-# TODO: Update site_description
-# TODO: Update site_author
-
-site_name: Professional Analytics Project
-site_url: https://denisecase.github.io/pro-analytics-02-starter/
-repo_url: https://github.com/denisecase/pro-analytics-02-starter
-site_description: Professional Python project demonstrating industry best practices
-site_author: Denise Case
+site_name: Emissions Analytics Capstone
+site_url: https://derekfintel.github.io/emissions_analytics_capstone/
+repo_url: https://github.com/derekfintel/emissions_analytics_capstone
+site_description: Repository for Masters Capstone Project - Analyzing Emissions Data with Machine Learning
+site_author: Derek Fintel
 docs_dir: docs
 site_dir: site
 
