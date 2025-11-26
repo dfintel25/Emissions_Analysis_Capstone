@@ -1,172 +1,77 @@
-# TEST
+# Repository: Emissions Analysis, Livestock vs Vehicles
+#### Developer: Derek Fintel
+#### Contact: s542635@nwmissouri.edu
 
-# Pro Analytics 02 Python Starter Repository
+## Repository Overview
+This repository captures the technical analysis utilized in a capstone project called "Emissions Analysis, Livestock vs Vehicles". The capstone project is part of a Masters of Science Data Analytics program.
 
-> Use this repo to start a professional Python project.
+#### Capstone Project Link: https://www.overleaf.com/read/rrpbnffjgngk#d6ef5d
 
-- Additional information: <https://github.com/denisecase/pro-analytics-02>
-- Project organization: [STRUCTURE](./STRUCTURE.md)
-- Build professional skills:
-  - **Environment Management**: Every project in isolation
-  - **Code Quality**: Automated checks for fewer bugs
-  - **Documentation**: Use modern project documentation tools
-  - **Testing**: Prove your code works
-  - **Version Control**: Collaborate professionally
+#### Capstone Abstract
+This study applied data science and machine learning techniques to compare and analyze greenhouse gas emissions from livestock production and vehicle usage. By conforming disparate datasets and performing regression and clustering analyses, the research quantified the relative emissions impact of cattle meat production and vehicle travel. The findings demonstrate that livestock-related emissions substantially exceed those from vehicle use under comparable annual activity assumptions providing insights into how diet and transportation choices may influence climate impact.
 
----
+### Source Data:
+This project utilized two separate datasets, sourced from [Kaggle](https://www.kaggle.com/). Both native CSV files have been brought into this project.
 
-## WORKFLOW 1. Set Up Your Machine
+Livestock Dataset: https://www.kaggle.com/datasets/amandaroseknudsen/gleamlivestockemissions
 
-Proper setup is critical.
-Complete each step in the following guide and verify carefully.
+Vehicle Dataset: https://www.kaggle.com/datasets/brsahan/vehicle-co2-emissions-dataset
 
-- [SET UP MACHINE](./SET_UP_MACHINE.md)
+### Use-case:
+This project will emulate a business solution where a coffee shop's point of sale system's data outputs are fed into an automated streaming system that ingests sources data, produces and publishes topics of data, consumes and transforms the messages, and generates output files and visualizations.
 
----
+### Visualization:
+Our project utilizes a dyanmic and live streaming visualization tool called [StreamLit](https://streamlit.io/). This tool enables our consumer data to be processed & streamed through a Windows Subsystem for Linux (WSL) terminal.
+Once the kafka system, Producer, and Consumer are all running, you can run the [live_sales_dashboard.py](https://vscode.dev/github/dfintel25/custom_pipeline_clean/blob/main/visualizations/live_sales_dashboard.py) program and it will prompt you to select an html viewer to access the streaming visualization.
+![Link Selection Example](image.png)
 
-## WORKFLOW 2. Set Up Your Project
+Once activated, our visualization will show the following examples:
 
-After verifying your machine is set up, set up a new Python project by copying this template.
-Complete each step in the following guide.
 
-- [SET UP PROJECT](./SET_UP_PROJECT.md)
-
-It includes the critical commands to set up your local environment (and activate it):
-
-```shell
-uv venv
-uv python pin 3.12
-uv sync --extra dev --extra docs --upgrade
-uv run pre-commit install
-uv run python --version
+### Preliminary Setup Steps
+### Additional Steps can be found in: C:\Projects\Emissions_Analysis_Capstone\SET_UP_Workflow.md
+### 1. Initialize
 ```
-
-**Windows (PowerShell):**
-
-```shell
-.\.venv\Scripts\activate
+1. Click "New Repository"
+    a. Generate name with no spaces
+    b. Add a "README.md"
+2. Clone Repository to machine via VS Code
+    a. Create folder in "C:\Projects"
+3. Install requirements.txt
+4. Setup gitignore
+5. Test example scripts in .venv
 ```
-
-**macOS / Linux / WSL:**
-
-```shell
-source .venv/bin/activate
+### 2. Create Project Virtual Environment
 ```
-
----
-
-## WORKFLOW 3. Daily Workflow
-
-Please ensure that the prior steps have been verified before continuing.
-When working on a project, we open just that project in VS Code.
-
-### 3.1 Git Pull from GitHub
-
-Always start with `git pull` to check for any changes made to the GitHub repo.
-
-```shell
-git pull
+py -m venv .venv
+.venv\Scripts\Activate
+py -m pip install --upgrade pip
+py -m pip install -r requirements.txt
+Retrieve installed items: !pip list
 ```
-
-### 3.2 Run Checks as You Work
-
-This mirrors real work where we typically:
-
-1. Update dependencies (for security and compatibility).
-2. Clean unused cached packages to free space.
-3. Use `git add .` to stage all changes.
-4. Run ruff and fix minor issues.
-5. Update pre-commit periodically.
-6. Run pre-commit quality checks on all code files (**twice if needed**, the first pass may fix things).
-7. Run tests.
-
-In VS Code, open your repository, then open a terminal (Terminal / New Terminal) and run the following commands one at a time to check the code.
-
-```shell
-uv sync --extra dev --extra docs --upgrade
-uv cache clean
+### 3. Git add, clone, and commit
+```
 git add .
-uvx ruff check --fix
-uvx pre-commit autoupdate
-uv run pre-commit run --all-files
-git add .
-uv run pytest
-```
-
-NOTE: The second `git add .` ensures any automatic fixes made by Ruff or pre-commit are included before testing or committing.
-
-<details>
-<summary>Click to see a note on best practices</summary>
-
-`uvx` runs the latest version of a tool in an isolated cache, outside the virtual environment.
-This keeps the project light and simple, but behavior can change when the tool updates.
-For fully reproducible results, or when you need to use the local `.venv`, use `uv run` instead.
-
-</details>
-
-### 3.3 Build Project Documentation
-
-Make sure you have current doc dependencies, then build your docs, fix any errors, and serve them locally to test.
-
-```shell
-uv run mkdocs build --strict
-uv run mkdocs serve
-```
-
-- After running the serve command, the local URL of the docs will be provided. To open the site, press **CTRL and click** the provided link (at the same time) to view the documentation. On a Mac, use **CMD and click**.
-- Press **CTRL c** (at the same time) to stop the hosting process.
-
-### 3.4 Execute
-
-This project includes demo code.
-Run the demo Python modules to confirm everything is working.
-
-In VS Code terminal, run:
-
-```shell
-uv run python -m analytics_project.demo_module_basics
-uv run python -m analytics_project.demo_module_languages
-uv run python -m analytics_project.demo_module_stats
-uv run python -m analytics_project.demo_module_viz
-```
-
-You should see:
-
-- Log messages in the terminal
-- Greetings in several languages
-- Simple statistics
-- A chart window open (close the chart window to continue).
-
-If this works, your project is ready! If not, check:
-
-- Are you in the right folder? (All terminal commands are to be run from the root project folder.)
-- Did you run the full `uv sync --extra dev --extra docs --upgrade` command?
-- Are there any error messages? (ask for help with the exact error)
-
----
-
-### 3.5 Git add-commit-push to GitHub
-
-Anytime we make working changes to code is a good time to git add-commit-push to GitHub.
-
-1. Stage your changes with git add.
-2. Commit your changes with a useful message in quotes.
-3. Push your work to GitHub.
-
-```shell
-git add .
-git commit -m "describe your change in quotes"
+git clone "urlexample.git"
+git commit -m "add .gitignore, cmds to readme"
 git push -u origin main
 ```
+### 4. If copying a repository:
+```
+1. Click "Use this template" on this example repository (if it's not a template, click "Fork" instead).
+2. Clone the repository to your machine:
+   git clone example-repo-url
+3. Open your new cloned repository in VS Code.
+```
+### 5. Detailed Project Setup
+For additional setup details such as kafka instantiation, emitter tests, and other commands, see: [ProjectSetup.md](https://vscode.dev/github/dfintel25/custom_pipeline_clean/blob/main/ProjectSetup.md)
 
-This will trigger the GitHub Actions workflow and publish your documentation via GitHub Pages.
-
-### 3.6 Modify and Debug
-
-With a working version safe in GitHub, start making changes to the code.
-
-Before starting a new session, remember to do a `git pull` and keep your tools updated.
-
-Each time forward progress is made, remember to git add-commit-push.
-
+### 6. Specific Module 7 Imports
+```
+python -m pip install beautifulsoup4
+python -m pip install html5lib
+python -m pip install requests
+python -m pip install spacy
+python -m pip install spacytextblob
+```
 
