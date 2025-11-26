@@ -8,7 +8,7 @@ This repository captures the technical analysis utilized in a capstone project c
 #### Capstone Project Link: https://www.overleaf.com/read/rrpbnffjgngk#d6ef5d
 
 #### Capstone Abstract
-This study applied data science and machine learning techniques to compare and analyze greenhouse gas emissions from livestock production and vehicle usage. By conforming disparate datasets and performing regression and clustering analyses, the research quantified the relative emissions impact of cattle meat production and vehicle travel. The findings demonstrate that livestock-related emissions substantially exceed those from vehicle use under comparable annual activity assumptions providing insights into how diet and transportation choices may influence climate impact.
+*This study applied data science and machine learning techniques to compare and analyze greenhouse gas emissions from livestock production and vehicle usage. By conforming disparate datasets and performing regression and clustering analyses, the research quantified the relative emissions impact of cattle meat production and vehicle travel. The findings demonstrate that livestock-related emissions substantially exceed those from vehicle use under comparable annual activity assumptions providing insights into how diet and transportation choices may influence climate impact.*
 
 ### Source Data:
 This project utilized two separate datasets, sourced from [Kaggle](https://www.kaggle.com/). Both native CSV files have been brought into this project.
@@ -17,18 +17,20 @@ Livestock Dataset: https://www.kaggle.com/datasets/amandaroseknudsen/gleamlivest
 
 Vehicle Dataset: https://www.kaggle.com/datasets/brsahan/vehicle-co2-emissions-dataset
 
-### Use-case:
-This project will emulate a business solution where a coffee shop's point of sale system's data outputs are fed into an automated streaming system that ingests sources data, produces and publishes topics of data, consumes and transforms the messages, and generates output files and visualizations.
+### Notebooks:
+The project is supported by the execution of 5 Jupyter Notebooks that individually contributed to the final results. See below for their listing and description.
+1) [emissions_analysis_livestock.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/emissions_analysis_livestock.ipynb) | An individual Exploratory Data Analysis of the Livestock source CSV data.
+2) [emissions_analysis_vehicle.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/emissions_analysis_vehicle.ipynb) | An individual Exploratory Data Analysis of the Vehicle source CSV data.
+3) [emission_comparison.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/emission_comparison.ipynb) | A comparitive analysis of both the Livestock and Vehicle datasets.
+4) [livestock_emissions_ML.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/livestock_emissions_ML.ipynb) | An individual Machine Learning Analysis of select Livestock data features.
+5) [vehicle_emissions_ML.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/vehicle_emissions_ML.ipynb) | An individual Machine Learning Analysis of select Vehicle data features.
 
 ### Visualization:
 Our project utilizes a dyanmic and live streaming visualization tool called [StreamLit](https://streamlit.io/). This tool enables our consumer data to be processed & streamed through a Windows Subsystem for Linux (WSL) terminal.
 Once the kafka system, Producer, and Consumer are all running, you can run the [live_sales_dashboard.py](https://vscode.dev/github/dfintel25/custom_pipeline_clean/blob/main/visualizations/live_sales_dashboard.py) program and it will prompt you to select an html viewer to access the streaming visualization.
 ![Link Selection Example](image.png)
 
-Once activated, our visualization will show the following examples:
-
-
-### Preliminary Setup Steps
+# Preliminary Setup Steps
 
 ### 1. Initialize
 ```
