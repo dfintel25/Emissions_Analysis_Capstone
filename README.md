@@ -25,7 +25,15 @@ The project is supported by the execution of 5 Jupyter Notebooks that individual
 4) [livestock_emissions_ML.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/livestock_emissions_ML.ipynb) | An individual Machine Learning Analysis of select Livestock data features.
 5) [vehicle_emissions_ML.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/vehicle_emissions_ML.ipynb) | An individual Machine Learning Analysis of select Vehicle data features.
 
+# Project Results
+Finding #1 - Individual Vehicle Dataset analysis
+Number of Cylinders per engine contributed to higher CO2 readings.
+![CO2 Emissions by Cylinder Count](image3.png)
 
+# Report Conclusion
+*Our project confirmed our thesis in identifying and measuring the comparative emissions of livestock production and vehicle usage. Our results show that Cattle Meat production for one year is\textbf{ 2.86x more CO2 polluting} than if all vehicles sold in North America drove 10,000 miles within that same year.
+
+Additionally, \textit{Enteric Fermentation} from Cattle (digestive methane byproduct) is the strongest contributor from livestock production and \textit{Engine Size} (along with cylinder-count) is the strongest contributor to vehicle use emissions. This provides insights into individual and collective choices where adjusting ones usage and consumption of the related topics could have a significant impact on our climate.*
 
 # Preliminary Setup Steps
 
@@ -67,7 +75,7 @@ git push -u origin main
 For additional setup details, see [SET_UP_Workflow.md](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/SET_UP_Workflow.md)
 ```
 
-### References
+# References
 ```
 Knudsen, Amanda Rose. **GLEAM Livestock Emissions Dataset (Kaggle)**.
 https://www.kaggle.com/datasets/amandaroseknudsen/gleamlivestockemissions
