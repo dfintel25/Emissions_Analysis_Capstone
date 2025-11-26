@@ -29,7 +29,7 @@ Once activated, our visualization will show the following examples:
 
 
 ### Preliminary Setup Steps
-### Additional Steps can be found in: C:\Projects\Emissions_Analysis_Capstone\SET_UP_Workflow.md
+
 ### 1. Initialize
 ```
 1. Click "New Repository"
@@ -64,14 +64,8 @@ git push -u origin main
 3. Open your new cloned repository in VS Code.
 ```
 ### 5. Detailed Project Setup
-For additional setup details such as kafka instantiation, emitter tests, and other commands, see: [ProjectSetup.md](https://vscode.dev/github/dfintel25/custom_pipeline_clean/blob/main/ProjectSetup.md)
+For additional setup details, see [SET_UP_Workflow.md](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/SET_UP_Workflow.md)
 
-### 6. Specific Module 7 Imports
 ```
-python -m pip install beautifulsoup4
-python -m pip install html5lib
-python -m pip install requests
-python -m pip install spacy
-python -m pip install spacytextblob
-```
+
 
