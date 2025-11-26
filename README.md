@@ -3,11 +3,11 @@
 #### Contact: s542635@nwmissouri.edu
 
 ## Repository Overview
-This repository captures the technical analysis utilized in a capstone project called "Emissions Analysis, Livestock vs Vehicles". The capstone project is part of a Masters of Science Data Analytics program.
+This repository captures the technical analysis utilized in a capstone project called "Emissions Analysis, Livestock vs Vehicles". The capstone project is part of a Masters of Science Data Analytics program and employs various data science and analytics methods against a problem domain.
 
-#### Capstone Project Link: https://www.overleaf.com/read/rrpbnffjgngk#d6ef5d
+#### Final Capstone Report Link: https://www.overleaf.com/read/rrpbnffjgngk#d6ef5d
 
-#### Capstone Abstract
+### Capstone Abstract
 *This study applied data science and machine learning techniques to compare and analyze greenhouse gas emissions from livestock production and vehicle usage. By conforming disparate datasets and performing regression and clustering analyses, the research quantified the relative emissions impact of cattle meat production and vehicle travel. The findings demonstrate that livestock-related emissions substantially exceed those from vehicle use under comparable annual activity assumptions providing insights into how diet and transportation choices may influence climate impact.*
 
 ### Source Data:
@@ -24,11 +24,6 @@ The project is supported by the execution of 5 Jupyter Notebooks that individual
 3) [emission_comparison.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/emission_comparison.ipynb) | A comparitive analysis of both the Livestock and Vehicle datasets.
 4) [livestock_emissions_ML.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/livestock_emissions_ML.ipynb) | An individual Machine Learning Analysis of select Livestock data features.
 5) [vehicle_emissions_ML.ipynb](https://vscode.dev/github/dfintel25/Emissions_Analysis_Capstone/blob/main/notebooks/vehicle_emissions_ML.ipynb) | An individual Machine Learning Analysis of select Vehicle data features.
-
-### Visualization:
-Our project utilizes a dyanmic and live streaming visualization tool called [StreamLit](https://streamlit.io/). This tool enables our consumer data to be processed & streamed through a Windows Subsystem for Linux (WSL) terminal.
-Once the kafka system, Producer, and Consumer are all running, you can run the [live_sales_dashboard.py](https://vscode.dev/github/dfintel25/custom_pipeline_clean/blob/main/visualizations/live_sales_dashboard.py) program and it will prompt you to select an html viewer to access the streaming visualization.
-![Link Selection Example](image.png)
 
 # Preliminary Setup Steps
 
